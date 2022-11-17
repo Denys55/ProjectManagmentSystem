@@ -35,7 +35,7 @@ public class CustomerService implements Service<CustomerDto> {
 
     @Override
     public boolean delete(CustomerDto entity) {
-        return repository.update(converter.convertFrom(entity));
+        return repository.delete(converter.convertFrom(entity));
     }
 
     @Override

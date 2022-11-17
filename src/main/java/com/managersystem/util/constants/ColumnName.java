@@ -8,7 +8,7 @@ public class ColumnName {
     public static final String BUDGET = "budget";
     public static final String COMPLEXITY = "complexity";
     public static final String COST = "cost";
-    public static final String LANGUAGE = "language";
+    public static final String LANGUAGE = "languages";
     public static final String AGE = "age";
     public static final String SALARY = "salary";
 

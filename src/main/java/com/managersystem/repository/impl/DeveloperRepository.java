@@ -37,7 +37,8 @@ public class DeveloperRepository implements Repository<DeveloperDao> {
             int result = statement.executeUpdate();
             if (result > 0) {
                 resultSet = statement.getGeneratedKeys();
-                entity.setId(resultSet.getInt(SQLQuery.FIRST_COLUMN));
+                if(resultSet.next()) {
+                entity.setId(resultSet.getInt(SQLQuery.FIRST_COLUMN)); }
             }
             return Optional.of(entity);
         } catch (SQLException exception) {

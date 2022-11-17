@@ -32,7 +32,13 @@ public class DatabaseManagerConnector implements Connector {
     @Override
     public Connection getConnection() throws SQLException {
         loadProperties();
-        return DriverManager.getConnection(url, data);
+        try {
+            Class.forName("org.postgresql.Driver");
+            return DriverManager.getConnection(url, data);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     /**
